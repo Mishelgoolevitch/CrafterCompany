@@ -1,6 +1,6 @@
 ﻿@inject IConfiguration config
 @{
-	Appconfig?  appConfig = config.GetSection("Project").Get<Appconfig>();
+	AppConfig?  appConfig = config.GetSection("Project").Get<AppConfig>();
 }
 <title>@(ViewBag.Title ?? appConfig?.Company.CompanyName)</title>
 <link  rel="shortcut icon" href="~/img/appliance-instructions.png"/>

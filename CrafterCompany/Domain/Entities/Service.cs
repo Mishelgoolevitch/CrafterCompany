@@ -23,5 +23,7 @@ namespace CrafterCompany.Domain.Entities
 
         [Display(Name = "Тип услуги")]
         public ServiceTypeEnum Type { get; set; }
+
+        public ICollection<Equipment>? Equipments { get; set; }
     }
 }

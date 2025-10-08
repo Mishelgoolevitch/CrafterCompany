@@ -59,6 +59,11 @@ namespace CrafterCompany
             //Подключаем систему маршрутизации
             app.UseRouting();
 
+            //Подключаем аутентификацию и авторизацию
+            app.UseCookiePolicy();
+            app.UseAuthentication();
+            app.UseAuthorization();
+
 
             //Регистрируем нужные нам маршруты
             app.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");

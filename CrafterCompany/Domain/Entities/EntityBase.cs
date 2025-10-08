@@ -11,7 +11,7 @@ namespace CrafterCompany.Domain.Entities
         [MaxLength(200)]
         public string? Title { get; set; }
 
-        DateTime DateCreated { get; set; } = DateTime.UtcNow;
+      public  DateTime DateCreated { get; set; } = DateTime.UtcNow;
 
 
     }

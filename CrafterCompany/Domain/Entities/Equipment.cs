@@ -5,7 +5,7 @@ namespace CrafterCompany.Domain.Entities
     public class Equipment : EntityBase
     {
         [Display(Name = "Выберите услугу, к которой относится станочное оборудование")]
-        public int ServiceId { get; set; }
+        public int? ServiceId { get; set; }
         public Service? Service { get; set; }
 
         [Display(Name = "Описание")]

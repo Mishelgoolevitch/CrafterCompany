@@ -1,4 +1,6 @@
 using CrafterCompany.Domain;
+using CrafterCompany.Domain.Repositories.Abstract;
+using CrafterCompany.Domain.Repositories.EntityFramework;
 using CrafterCompany.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +27,11 @@ namespace CrafterCompany
             //Подключаем контекст базы данных
             builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(config.Database.ConnectionString)
             .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning)));
+
+            builder.Services.AddTransient<IServiceCategoriesRepository, EFServiceCategoriesRepository>();
+            builder.Services.AddTransient<IServicesRepository, EFServicesRepository>();
+            builder.Services.AddTransient<IEquipmentsRepository, EFEquipmentsRepository>();
+            builder.Services.AddTransient<DataManager>();
 
             //Настраиваем Identity систему
             builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {

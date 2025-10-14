@@ -21,6 +21,7 @@ namespace CrafterCompany.Controllers.Admin
         {
             ViewBag.ServiceCategories = await _dataManager.ServiceCategories.GetServiceCategoriesAsync();
             ViewBag.Services = await _dataManager.Services.GetServicesAsync();
+            ViewBag.Equipments = await _dataManager.Equipments.GetServicesAsync();
 
             return View();
         }

@@ -3,7 +3,7 @@
 	AppConfig? appConfig = config.GetSection("Project").Get<AppConfig>();
 }
 
-<div id="footer-wrapper">
+@* <div id="footer-wrapper">
 	<footer id="footer" class="container">
 		<div class="row">
 		<div class="col-12">
@@ -16,4 +16,9 @@
 			</div>
 		</div>
 	</footer>
-</div>
+</div> *@
+
+<footer class="footer">
+	<h2>Свяжитесь с нами</h2>
+	<p>&copy; @appConfig?.Company.CompanyName. © @DateTime.Now.Year — Вдохновляем через технологии</p>
+</footer>

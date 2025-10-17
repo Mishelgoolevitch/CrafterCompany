@@ -2,18 +2,38 @@
 @{
 	AppConfig? appConfig = config.GetSection("Project").Get<AppConfig>();
 }
-<div id="header-wrapper">
+
+<nav class="navbar">
+	<div class="logo">
+		<a asp-area="" asp-controller="Home" asp-action="Index" id="logo">
+			@appConfig?.Company.CompanyName
+		</a>
+	</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a asp-page="/Index">Главная</a></li>
+        <li><a asp-page="/Services">Услуги</a></li>
+        <li><a asp-page="/Projects">Проекты</a></li>
+        <li><a asp-page="/About">О нас</a></li>
+        <li><a asp-page="/Contact">Контакты</a></li>
+    </ul>
+    <div class="burger" id="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+
+@* <div id="header-wrapper">
 	<div class="container">
 		<header id="header">
 			<div class="inner">
-					<h1>
+				<h1>
 					<a  asp-area="" asp-controller="Home" asp-action="Index" id="logo">
 						@appConfig?.Company.CompanyName
 					</a>
 				</h1>
-				@*TODO: ViewComponent*@ 			
+							
 				</div>
-			</header>
-			</div>
-		</div>
-
+		</header>
+	</div>
+</div> *@

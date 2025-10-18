@@ -29,7 +29,7 @@ namespace CrafterCompany.Controllers.Admin
         //Сохраняем картинку в файловую систему
         public async Task<string> SaveImg(IFormFile img)
         {
-            string path = Path.Combine(_hostingEnvironment.WebRootPath, "images/", img.FileName);
+            string path = Path.Combine(_hostingEnvironment.WebRootPath, "img/", img.FileName);
             await using FileStream stream = new FileStream(path, FileMode.Create);
             await img.CopyToAsync(stream);
 
@@ -42,7 +42,7 @@ namespace CrafterCompany.Controllers.Admin
             IFormFile img = Request.Form.Files[0];
             await SaveImg(img);
 
-            return JsonSerializer.Serialize(new { location = Path.Combine("/images/", img.FileName) });
+            return JsonSerializer.Serialize(new { location = Path.Combine("/img/", img.FileName) });
         }
 
     }

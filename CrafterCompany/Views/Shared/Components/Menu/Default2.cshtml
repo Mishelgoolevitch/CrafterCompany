@@ -1,0 +1,23 @@
+﻿@model IEnumerable<EquipmentDTO>
+
+<nav id="nav">
+	<ul>
+
+		<li>
+			<a asp-area="" asp-controller="Equipments" asp-action="Index">Оборудование</a>
+		<li>
+			
+			<ul>
+				@foreach (EquipmentDTO entity in Model)
+				{
+					<li>
+						<a asp-area="" asp-controller="Services" asp-action="Show" asp-route-id="@entity.Id">
+							@entity.Description
+						</a>
+					</li>
+				}
+			</ul>
+		</li>
+
+	</ul>
+</nav>

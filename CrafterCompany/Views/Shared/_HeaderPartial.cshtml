@@ -1,39 +1,26 @@
-﻿@inject IConfiguration config
+﻿@using CrafterCompany.Models.Components
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using CrafterCompany.Infrastructure
+@inject IConfiguration config
 @{
 	AppConfig? appConfig = config.GetSection("Project").Get<AppConfig>();
 }
 
 <nav class="navbar">
+		
+	
 	<div class="logo">
 		<a asp-area="" asp-controller="Home" asp-action="Index" id="logo">
 			@appConfig?.Company.CompanyName
 		</a>
 	</div>
-    <ul class="nav-links" id="navLinks">
-        <li><a asp-page="/Index">Главная</a></li>
-        <li><a asp-page="/Services">Услуги</a></li>
-        <li><a asp-page="/Projects">Проекты</a></li>
-        <li><a asp-page="/About">О нас</a></li>
-        <li><a asp-page="/Contact">Контакты</a></li>
-    </ul>
-    <div class="burger" id="burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
+
+	@(await Component.InvokeAsync<MenuViewComponent>())
+	@* @(await Component.InvokeAsync2<MenuViewComponent>()) *@
+		
 </nav>
 
-@* <div id="header-wrapper">
-	<div class="container">
-		<header id="header">
-			<div class="inner">
-				<h1>
-					<a  asp-area="" asp-controller="Home" asp-action="Index" id="logo">
-						@appConfig?.Company.CompanyName
-					</a>
-				</h1>
-							
-				</div>
-		</header>
-	</div>
-</div> *@
+
+
+

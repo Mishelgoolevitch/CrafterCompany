@@ -1,0 +1,31 @@
+﻿@model EquipmentDTO
+@{
+	string? strTitle = Model.Description;
+	ViewBag.Title = strTitle;
+}
+@await Html.PartialAsync("_SidebarPartial")
+<div class="col-8 col-12-medium imp-medium">
+	<div id="content">
+		<h2 class="service-item">
+			@strTitle
+		</h2>
+		@if (Model.Description != null)
+		{
+			<div class="service-item">
+				Описание: <span class="text-bold">@Model.Description</span>
+			</div>
+		}
+		<div class="service-item">
+			Тип услуги: <span class="text-bold">@Model.Model</span>
+		</div>
+		<div class="service-item">
+			<img src="~/images/@Model.PhotoFileName" class="img-block" />
+		</div>
+		<div class="service-item">
+			@Model.Capabilities
+		</div>
+		<div class="service-item">
+			@Html.Raw(Model.Capabilities)
+		</div>
+	</div>
+</div>

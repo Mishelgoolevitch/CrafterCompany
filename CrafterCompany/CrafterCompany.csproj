@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ViewComponents\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\scss\" />
   </ItemGroup>

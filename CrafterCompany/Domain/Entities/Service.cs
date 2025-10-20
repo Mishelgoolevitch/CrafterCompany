@@ -9,6 +9,7 @@ namespace CrafterCompany.Domain.Entities
         public int? ServiceCategoryId { get; set; }
         public ServiceCategory? ServiceCategory { get; set; }
 
+        
         [Display(Name = "Краткое описание")]
         [MaxLength(3_000)]
         public string? DescriptionShort { get; set; }

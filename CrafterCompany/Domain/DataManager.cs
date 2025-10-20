@@ -8,7 +8,8 @@ namespace CrafterCompany.Domain
         public IServicesRepository Services { get; set; }
         public IEquipmentsRepository Equipments { get; set; }
 
-        public DataManager(IServiceCategoriesRepository serviceCategoriesRepository, IServicesRepository servicesRepository, IEquipmentsRepository equipmentsRepository)
+        public DataManager(IServiceCategoriesRepository serviceCategoriesRepository, IServicesRepository servicesRepository,
+            IEquipmentsRepository equipmentsRepository)
         {
             ServiceCategories = serviceCategoriesRepository;
             Services = servicesRepository;

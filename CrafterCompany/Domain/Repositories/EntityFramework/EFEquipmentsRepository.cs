@@ -13,24 +13,24 @@ namespace CrafterCompany.Domain.Repositories.EntityFramework
             _context = context;
         }
         //Services
-        public async Task<IEnumerable<Equipment>> GetServicesAsync()
+        public async Task<IEnumerable<Equipment>> GetEquipmentsAsync()
         {
             return await _context.Equipments.Include(x => x.Service).ToListAsync();
 
         }
 
-        public async Task<Equipment?> GetServiceByIdAsync(int id)
+        public async Task<Equipment?> GetEquipmentByIdAsync(int id)
         {
             return await _context.Equipments.Include(x => x.Service).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task SaveServiceAsync(Equipment entity)
+        public async Task SaveEquipmentAsync(Equipment entity)
         {
             _context.Entry(entity).State = entity.Id == default ? EntityState.Added : EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteServiceAsync(int id)
+        public async Task DeleteEquipmentAsync(int id)
         {
             _context.Entry(new Equipment() { Id = id }).State = EntityState.Deleted;
             await _context.SaveChangesAsync();

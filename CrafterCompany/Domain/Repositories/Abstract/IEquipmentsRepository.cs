@@ -4,9 +4,9 @@ namespace CrafterCompany.Domain.Repositories.Abstract
 {
     public interface IEquipmentsRepository
     {
-        Task<IEnumerable<Equipment>> GetServicesAsync();
-        Task<Equipment?> GetServiceByIdAsync(int id);
-        Task SaveServiceAsync(Equipment entity);
-        Task DeleteServiceAsync(int id);
+        Task<IEnumerable<Equipment>> GetEquipmentsAsync();
+        Task<Equipment?> GetEquipmentByIdAsync(int id);
+        Task SaveEquipmentAsync(Equipment entity);
+        Task DeleteEquipmentAsync(int id);
     }
 }

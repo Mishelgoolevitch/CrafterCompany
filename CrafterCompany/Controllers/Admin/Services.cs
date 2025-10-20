@@ -16,9 +16,9 @@ namespace CrafterCompany.Controllers.Admin
         public async Task<IActionResult> ServicesEdit(Service entity, IFormFile? titleImageFile)
         {
             if (!ModelState.IsValid)
-            {
+            { 
                 ViewBag.ServiceCategories = await _dataManager.ServiceCategories.GetServiceCategoriesAsync();
-                return View(entity);
+            return View(entity);
             }
 
 

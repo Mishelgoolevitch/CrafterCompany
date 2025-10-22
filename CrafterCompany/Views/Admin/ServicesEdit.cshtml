@@ -55,7 +55,7 @@
 				<label asp-for="Photo"></label>
 				<input type="file" name="titleImageFile" id="titleImageFile" />
 				<div>
-					<img class="img-block" src="~/images/@Model.Photo" />
+					<img class="img-block" src="~/img/@Model.Photo" />
 				</div>
 			</div>
 			<input type="submit" value="Сохранить" />
@@ -74,6 +74,6 @@
 	  images_reuse_filename:true,
 	  image_dimensions:false,
 	  paste_data_images:true,
-	  convert_urls:true
+	  convert_urls:false
 	});
 </script>

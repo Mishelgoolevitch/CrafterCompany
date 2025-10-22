@@ -33,6 +33,7 @@ namespace CrafterCompany.Infrastructure
             entityDTO.Model=entity.Model;
             entityDTO.Description = entity.Description;
             entityDTO.PhotoFileName = entity.Photo;
+            entityDTO.Capabilities = entity.Capabilities;
          
             return entityDTO;
         }

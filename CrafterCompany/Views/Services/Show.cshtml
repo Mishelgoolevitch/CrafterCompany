@@ -3,7 +3,19 @@
 	string? strTitle = Model.Title;
 	ViewBag.Title = strTitle;
 }
+
 @await Html.PartialAsync("_SidebarPartial")
+<style>
+	.div-box {
+		padding: 30px 0;
+	}
+
+	.img-block {
+		display: block;
+		margin: 0 auto;
+		max-width: 70%;
+	}
+</style>
 <div class="col-8 col-12-medium imp-medium">
 	<div id="content">
 		<h2 class="service-item">
@@ -19,7 +31,7 @@
 			Тип услуги: <span class="text-bold">@Model.Type</span>
 		</div>
 		<div class="service-item">
-			<img src="~/images/@Model.PhotoFileName" class="img-block" />
+			<img src="~/img/@Model.PhotoFileName" class="img-block" />
 		</div>
 		<div class="service-item">
 			@Model.DescriptionShort

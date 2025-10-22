@@ -1,30 +1,29 @@
 ﻿using CrafterCompany.Domain;
 using CrafterCompany.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
 using CrafterCompany.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+
 namespace CrafterCompany.Models.Components
 {
-    public class MenuViewComponent : ViewComponent
+    public class MenuViewComponentEquipment:ViewComponent
     {
         private readonly DataManager _dataManager;
 
-        public MenuViewComponent(DataManager dataManager)
+        public MenuViewComponentEquipment(DataManager dataManager)
         {
             _dataManager = dataManager;
         }
-
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            IEnumerable<Service> list = await _dataManager.Services.GetServicesAsync();
 
+            IEnumerable<Equipment> list = await _dataManager.Equipments.GetEquipmentsAsync();
 
             //Доменную сущность на клиенте использовать не рекомендуется, оборачиваем ее в DTO
 
-            IEnumerable<ServiceDTO> listDTO = HelperDTO.TransformServices(list);
 
+            IEnumerable<EquipmentDTO> listDTO = HelperDTO.TransformEquipment(list);
 
             return await Task.FromResult((IViewComponentResult)View("Default", listDTO));
         }
-      
     }
 }

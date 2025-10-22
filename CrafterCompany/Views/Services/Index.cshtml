@@ -4,7 +4,17 @@
 	ViewBag.Title = strTitle;
 }
 @await Html.PartialAsync("_SidebarPartial")
+<style>
+	.div-box {
+		padding: 30px 0;
+	}
 
+	.img-block {
+		display: block;
+		margin: 0 auto;
+		max-width: 70%;
+	}
+	</style>
 <div class="col-8 col-12-medium imp-medium">
 	<div id="content">
 		@if (Model.Any())
@@ -17,7 +27,7 @@
 				{
 					<article class="box excerpt">
 						<a asp-area="" asp-controller="Services" asp-action="Show" asp-route-id="@entity.Id" class="image-left  image-service-list">
-							<im src="~/img/@entity.PhotoFileName" alt="" />
+							<img src="~/img/@entity.PhotoFileName" alt="" />
 						</a>
 						<div>
 							<header>

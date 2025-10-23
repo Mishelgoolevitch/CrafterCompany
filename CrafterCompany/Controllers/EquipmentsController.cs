@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CrafterCompany.Controllers
 {
-    public class EquipmetsController : Controller
+    public class EquipmentsController : Controller
     {
         private readonly DataManager _dataManager;
 
-        public EquipmetsController(DataManager dataManager)
+        public EquipmentsController(DataManager dataManager)
         {
             _dataManager = dataManager;
         }

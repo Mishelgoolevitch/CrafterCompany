@@ -1,6 +1,6 @@
 ﻿@model EquipmentDTO
 @{
-	string? strTitle = Model.Description;
+	string? strTitle = Model.Model;
 	ViewBag.Title = strTitle;
 }
 @await Html.PartialAsync("_SidebarPartial")
@@ -16,7 +16,7 @@
 			</div>
 		}
 		<div class="service-item">
-			Тип услуги: <span class="text-bold">@Model.Model</span>
+			Модель станка: <span class="text-bold">@Model.Model</span>
 		</div>
 		<div class="service-item">
 			<img src="~/img/@Model.PhotoFileName" class="img-block" />
@@ -25,7 +25,7 @@
 			@Model.Capabilities
 		</div>
 		<div class="service-item">
-			@Html.Raw(Model.Capabilities)
+			@Html.Raw(Model.Model)
 		</div>
 	</div>
 </div>

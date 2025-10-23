@@ -23,7 +23,7 @@ namespace CrafterCompany.Models.Components
 
             IEnumerable<EquipmentDTO> listDTO = HelperDTO.TransformEquipment(list);
 
-            return await Task.FromResult((IViewComponentResult)View("Default", listDTO));
+            return await Task.FromResult((IViewComponentResult)View("Defaults", listDTO));
         }
     }
 }

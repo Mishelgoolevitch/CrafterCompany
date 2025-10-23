@@ -4,7 +4,7 @@
 @using CrafterCompany.Infrastructure
 @inject IConfiguration config
 @{
-	AppConfig? appConfig = config.GetSection("Project").Get<AppConfig>();
+	 AppConfig? appConfig = config.GetSection("Project").Get<AppConfig>();
 }
 
 <nav class="navbar">
@@ -17,7 +17,7 @@
 	</div>
 
 	@(await Component.InvokeAsync<MenuViewComponent>())
-	@* @(await Component.InvokeAsync2<MenuViewComponent>()) *@
+	
 		
 </nav>
 

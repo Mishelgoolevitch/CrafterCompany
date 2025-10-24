@@ -5,6 +5,7 @@ namespace CrafterCompany.Infrastructure
 {
     public class HelperDTO
     {
+        //Service = > ServiceDTO
         public static ServiceDTO TransformService(Service entity)
         {
             ServiceDTO entityDTO = new ServiceDTO();

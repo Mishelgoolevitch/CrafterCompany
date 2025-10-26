@@ -9,12 +9,7 @@ namespace CrafterCompany.Controllers
     {
         public IActionResult Index()
         {
-            //var model = new NavigationViewModel
-            //{
-            //    Services = Services.GetAll(),
-            //    Equipments = Equipments.GetAll()
-            //};
-            //return View(model);
+            
             return View();
 
         }

@@ -18,7 +18,7 @@ namespace CrafterCompany.Controllers
         {
             IEnumerable<Service> list = await _dataManager.Services.GetServicesAsync();
 
-            //Доменную сущность на клиенте использовать не рекомендуется, оборачиваем ее в DTO
+            
 
             IEnumerable<ServiceDTO> listDTO = HelperDTO.TransformServices(list);
 
